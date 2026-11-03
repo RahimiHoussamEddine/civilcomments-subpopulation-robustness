@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "civilcomments-subpopulation-robustness"
+version = "0.1.0"
+description = "A local workbench for NLP model performance under overlapping subpopulation shifts"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { file = "LICENSE" }
+dependencies = [
+  "joblib>=1.4,<2",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<4",
+  "plotly>=5.24,<7",
+  "scikit-learn>=1.5,<2",
+  "streamlit>=1.58,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "ruff>=0.11,<1"]
+
+[project.scripts]
+civilcomments-data = "civilcomments_robustness.data:main"
+civilcomments-train = "civilcomments_robustness.train:main"
+civilcomments-evaluate = "civilcomments_robustness.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

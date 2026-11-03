@@ -1,0 +1,2008 @@
+{
+  "dataset": "WILDS CivilComments v1.0",
+  "validation_rows_used": 44992,
+  "train_rows_used": 267669,
+  "row_exclusions": {
+    "train_removed_for_empty_or_duplicate_text": 1369,
+    "val_removed_for_empty_or_duplicate_text": 188,
+    "test_removed_for_empty_or_duplicate_text": 1
+  },
+  "test_data_used_for_fitting_or_model_selection": false,
+  "test_text_used_only_for_predeclared_exact_duplicate_exclusion": true,
+  "feature_method": "word TF-IDF, unigram and bigram, max 80,000 terms",
+  "estimator": "SGDClassifier logistic loss, L2 penalty, averaged weights",
+  "max_iter": 20,
+  "erm_alpha_candidates": [
+    {
+      "alpha": 1e-05,
+      "validation_log_loss": 0.23099202581438702,
+      "n_iter": 9
+    },
+    {
+      "alpha": 3e-05,
+      "validation_log_loss": 0.26069554617571067,
+      "n_iter": 8
+    },
+    {
+      "alpha": 0.0001,
+      "validation_log_loss": 0.29663825780406716,
+      "n_iter": 7
+    }
+  ],
+  "group_weight_strength_candidates": [
+    {
+      "group_weight_strength": 0.5,
+      "threshold": 0.3,
+      "validation_metrics": {
+        "accuracy": 0.8946257112375533,
+        "macro_group_accuracy": 0.7497498432289649,
+        "worst_group_accuracy": 0.597911227154047,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 4046,
+            "accuracy": 0.856648541769649
+          },
+          {
+            "group": "male|1",
+            "count": 713,
+            "accuracy": 0.7531556802244039
+          },
+          {
+            "group": "female|0",
+            "count": 5114,
+            "accuracy": 0.872506843957763
+          },
+          {
+            "group": "female|1",
+            "count": 769,
+            "accuracy": 0.6983094928478544
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 1097,
+            "accuracy": 0.7383773928896992
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 357,
+            "accuracy": 0.7086834733893558
+          },
+          {
+            "group": "christian|0",
+            "count": 4163,
+            "accuracy": 0.9322603891424454
+          },
+          {
+            "group": "christian|1",
+            "count": 383,
+            "accuracy": 0.597911227154047
+          },
+          {
+            "group": "muslim|0",
+            "count": 1592,
+            "accuracy": 0.7292713567839196
+          },
+          {
+            "group": "muslim|1",
+            "count": 511,
+            "accuracy": 0.7534246575342466
+          },
+          {
+            "group": "other_religions|0",
+            "count": 822,
+            "accuracy": 0.8503649635036497
+          },
+          {
+            "group": "other_religions|1",
+            "count": 162,
+            "accuracy": 0.6296296296296297
+          },
+          {
+            "group": "black|0",
+            "count": 1119,
+            "accuracy": 0.612153708668454
+          },
+          {
+            "group": "black|1",
+            "count": 530,
+            "accuracy": 0.839622641509434
+          },
+          {
+            "group": "white|0",
+            "count": 2005,
+            "accuracy": 0.6094763092269326
+          },
+          {
+            "group": "white|1",
+            "count": 845,
+            "accuracy": 0.8142011834319527
+          }
+        ],
+        "threshold": 0.3,
+        "roc_auc": 0.9025692695948564,
+        "average_precision": 0.6081903715057627,
+        "brier_score": 0.06706175839813307,
+        "log_loss": 0.24022656871862197,
+        "expected_calibration_error_15_bins": 0.04691377127102644,
+        "true_positive_rate": 0.6436667329488964,
+        "true_negative_rate": 0.926206741235643,
+        "false_positive_rate": 0.07379325876435704
+      },
+      "n_iter": 9
+    },
+    {
+      "group_weight_strength": 1.0,
+      "threshold": 0.33,
+      "validation_metrics": {
+        "accuracy": 0.8902693812233285,
+        "macro_group_accuracy": 0.7493648356053723,
+        "worst_group_accuracy": 0.6135770234986945,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 4046,
+            "accuracy": 0.8455264458724666
+          },
+          {
+            "group": "male|1",
+            "count": 713,
+            "accuracy": 0.7671809256661991
+          },
+          {
+            "group": "female|0",
+            "count": 5114,
+            "accuracy": 0.8582323034806414
+          },
+          {
+            "group": "female|1",
+            "count": 769,
+            "accuracy": 0.7087126137841352
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 1097,
+            "accuracy": 0.7383773928896992
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 357,
+            "accuracy": 0.7058823529411765
+          },
+          {
+            "group": "christian|0",
+            "count": 4163,
+            "accuracy": 0.9240932020177757
+          },
+          {
+            "group": "christian|1",
+            "count": 383,
+            "accuracy": 0.6135770234986945
+          },
+          {
+            "group": "muslim|0",
+            "count": 1592,
+            "accuracy": 0.7211055276381909
+          },
+          {
+            "group": "muslim|1",
+            "count": 511,
+            "accuracy": 0.7514677103718199
+          },
+          {
+            "group": "other_religions|0",
+            "count": 822,
+            "accuracy": 0.8503649635036497
+          },
+          {
+            "group": "other_religions|1",
+            "count": 162,
+            "accuracy": 0.6296296296296297
+          },
+          {
+            "group": "black|0",
+            "count": 1119,
+            "accuracy": 0.6291331546023236
+          },
+          {
+            "group": "black|1",
+            "count": 530,
+            "accuracy": 0.8207547169811321
+          },
+          {
+            "group": "white|0",
+            "count": 2005,
+            "accuracy": 0.6139650872817956
+          },
+          {
+            "group": "white|1",
+            "count": 845,
+            "accuracy": 0.8118343195266272
+          }
+        ],
+        "threshold": 0.33,
+        "roc_auc": 0.8990172391864542,
+        "average_precision": 0.6035987029679377,
+        "brier_score": 0.06968649799411121,
+        "log_loss": 0.25127342438901945,
+        "expected_calibration_error_15_bins": 0.06466925779359747,
+        "true_positive_rate": 0.656591767747067,
+        "true_negative_rate": 0.9196757000225209,
+        "false_positive_rate": 0.08032429997747917
+      },
+      "n_iter": 10
+    },
+    {
+      "group_weight_strength": 2.0,
+      "threshold": 0.36,
+      "validation_metrics": {
+        "accuracy": 0.8842905405405406,
+        "macro_group_accuracy": 0.7479615722200013,
+        "worst_group_accuracy": 0.6161879895561357,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 4046,
+            "accuracy": 0.8405832921403855
+          },
+          {
+            "group": "male|1",
+            "count": 713,
+            "accuracy": 0.7685834502103787
+          },
+          {
+            "group": "female|0",
+            "count": 5114,
+            "accuracy": 0.8472819710598357
+          },
+          {
+            "group": "female|1",
+            "count": 769,
+            "accuracy": 0.7074122236671001
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 1097,
+            "accuracy": 0.7456700091157703
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 357,
+            "accuracy": 0.6974789915966386
+          },
+          {
+            "group": "christian|0",
+            "count": 4163,
+            "accuracy": 0.9207302426134999
+          },
+          {
+            "group": "christian|1",
+            "count": 383,
+            "accuracy": 0.6161879895561357
+          },
+          {
+            "group": "muslim|0",
+            "count": 1592,
+            "accuracy": 0.7217336683417085
+          },
+          {
+            "group": "muslim|1",
+            "count": 511,
+            "accuracy": 0.7455968688845401
+          },
+          {
+            "group": "other_religions|0",
+            "count": 822,
+            "accuracy": 0.8637469586374696
+          },
+          {
+            "group": "other_religions|1",
+            "count": 162,
+            "accuracy": 0.6234567901234568
+          },
+          {
+            "group": "black|0",
+            "count": 1119,
+            "accuracy": 0.6425379803395889
+          },
+          {
+            "group": "black|1",
+            "count": 530,
+            "accuracy": 0.8018867924528302
+          },
+          {
+            "group": "white|0",
+            "count": 2005,
+            "accuracy": 0.6209476309226932
+          },
+          {
+            "group": "white|1",
+            "count": 845,
+            "accuracy": 0.8035502958579882
+          }
+        ],
+        "threshold": 0.36,
+        "roc_auc": 0.8946200518836455,
+        "average_precision": 0.599617038890921,
+        "brier_score": 0.074324810479346,
+        "log_loss": 0.2680435852550883,
+        "expected_calibration_error_15_bins": 0.08802308709074423,
+        "true_positive_rate": 0.666136408828793,
+        "true_negative_rate": 0.9117433626104147,
+        "false_positive_rate": 0.08825663738958536
+      },
+      "n_iter": 11
+    }
+  ],
+  "selected": {
+    "erm": {
+      "alpha": 1e-05,
+      "threshold_objective": "validation average accuracy",
+      "threshold": 0.36,
+      "validation_metrics": {
+        "accuracy": 0.9140069345661451,
+        "macro_group_accuracy": 0.6628948888607128,
+        "worst_group_accuracy": 0.2193211488250653,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 4046,
+            "accuracy": 0.9700939199209095
+          },
+          {
+            "group": "male|1",
+            "count": 713,
+            "accuracy": 0.40953716690042075
+          },
+          {
+            "group": "female|0",
+            "count": 5114,
+            "accuracy": 0.9753617520531873
+          },
+          {
+            "group": "female|1",
+            "count": 769,
+            "accuracy": 0.36280884265279584
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 1097,
+            "accuracy": 0.9434822242479489
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 357,
+            "accuracy": 0.37254901960784315
+          },
+          {
+            "group": "christian|0",
+            "count": 4163,
+            "accuracy": 0.988950276243094
+          },
+          {
+            "group": "christian|1",
+            "count": 383,
+            "accuracy": 0.2193211488250653
+          },
+          {
+            "group": "muslim|0",
+            "count": 1592,
+            "accuracy": 0.9409547738693468
+          },
+          {
+            "group": "muslim|1",
+            "count": 511,
+            "accuracy": 0.3972602739726027
+          },
+          {
+            "group": "other_religions|0",
+            "count": 822,
+            "accuracy": 0.9671532846715328
+          },
+          {
+            "group": "other_religions|1",
+            "count": 162,
+            "accuracy": 0.30246913580246915
+          },
+          {
+            "group": "black|0",
+            "count": 1119,
+            "accuracy": 0.8543342269883825
+          },
+          {
+            "group": "black|1",
+            "count": 530,
+            "accuracy": 0.5113207547169811
+          },
+          {
+            "group": "white|0",
+            "count": 2005,
+            "accuracy": 0.8688279301745636
+          },
+          {
+            "group": "white|1",
+            "count": 845,
+            "accuracy": 0.5218934911242603
+          }
+        ],
+        "threshold": 0.36,
+        "roc_auc": 0.9076685728492533,
+        "average_precision": 0.6287463132629052,
+        "brier_score": 0.0667847705252023,
+        "log_loss": 0.23099202581438702,
+        "expected_calibration_error_15_bins": 0.04608690978046633,
+        "true_positive_rate": 0.3682640684032611,
+        "true_negative_rate": 0.9826839826839827,
+        "false_positive_rate": 0.017316017316017316
+      }
+    },
+    "group_reweighted": {
+      "alpha": 1e-05,
+      "group_weight_strength": 2.0,
+      "threshold_objective": "validation worst-group accuracy",
+      "threshold": 0.36,
+      "validation_metrics": {
+        "accuracy": 0.8842905405405406,
+        "macro_group_accuracy": 0.7479615722200013,
+        "worst_group_accuracy": 0.6161879895561357,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 4046,
+            "accuracy": 0.8405832921403855
+          },
+          {
+            "group": "male|1",
+            "count": 713,
+            "accuracy": 0.7685834502103787
+          },
+          {
+            "group": "female|0",
+            "count": 5114,
+            "accuracy": 0.8472819710598357
+          },
+          {
+            "group": "female|1",
+            "count": 769,
+            "accuracy": 0.7074122236671001
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 1097,
+            "accuracy": 0.7456700091157703
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 357,
+            "accuracy": 0.6974789915966386
+          },
+          {
+            "group": "christian|0",
+            "count": 4163,
+            "accuracy": 0.9207302426134999
+          },
+          {
+            "group": "christian|1",
+            "count": 383,
+            "accuracy": 0.6161879895561357
+          },
+          {
+            "group": "muslim|0",
+            "count": 1592,
+            "accuracy": 0.7217336683417085
+          },
+          {
+            "group": "muslim|1",
+            "count": 511,
+            "accuracy": 0.7455968688845401
+          },
+          {
+            "group": "other_religions|0",
+            "count": 822,
+            "accuracy": 0.8637469586374696
+          },
+          {
+            "group": "other_religions|1",
+            "count": 162,
+            "accuracy": 0.6234567901234568
+          },
+          {
+            "group": "black|0",
+            "count": 1119,
+            "accuracy": 0.6425379803395889
+          },
+          {
+            "group": "black|1",
+            "count": 530,
+            "accuracy": 0.8018867924528302
+          },
+          {
+            "group": "white|0",
+            "count": 2005,
+            "accuracy": 0.6209476309226932
+          },
+          {
+            "group": "white|1",
+            "count": 845,
+            "accuracy": 0.8035502958579882
+          }
+        ],
+        "threshold": 0.36,
+        "roc_auc": 0.8946200518836455,
+        "average_precision": 0.599617038890921,
+        "brier_score": 0.074324810479346,
+        "log_loss": 0.2680435852550883,
+        "expected_calibration_error_15_bins": 0.08802308709074423,
+        "true_positive_rate": 0.666136408828793,
+        "true_negative_rate": 0.9117433626104147,
+        "false_positive_rate": 0.08825663738958536
+      }
+    }
+  },
+  "threshold_curves": {
+    "erm": [
+      {
+        "threshold": 0.05,
+        "accuracy": 0.4787073257467994,
+        "macro_group_accuracy": 0.6095497988710837,
+        "worst_group_accuracy": 0.06034912718204489,
+        "true_positive_rate": 0.9832968781069795,
+        "false_positive_rate": 0.5847909316117409
+      },
+      {
+        "threshold": 0.06,
+        "accuracy": 0.5715905049786629,
+        "macro_group_accuracy": 0.6383203147731078,
+        "worst_group_accuracy": 0.09875311720698254,
+        "true_positive_rate": 0.9671902962815669,
+        "false_positive_rate": 0.47819232790331057
+      },
+      {
+        "threshold": 0.07,
+        "accuracy": 0.6427142603129445,
+        "macro_group_accuracy": 0.6635259228561161,
+        "worst_group_accuracy": 0.13665835411471322,
+        "true_positive_rate": 0.9486975541857228,
+        "false_positive_rate": 0.3957911067737657
+      },
+      {
+        "threshold": 0.08,
+        "accuracy": 0.701947012802276,
+        "macro_group_accuracy": 0.6856080350792273,
+        "worst_group_accuracy": 0.1742627345844504,
+        "true_positive_rate": 0.9288128852654604,
+        "false_positive_rate": 0.3266021069489278
+      },
+      {
+        "threshold": 0.09,
+        "accuracy": 0.7449102062588905,
+        "macro_group_accuracy": 0.7017856251568858,
+        "worst_group_accuracy": 0.21000893655049152,
+        "true_positive_rate": 0.9049512825611453,
+        "false_positive_rate": 0.2752295873683157
+      },
+      {
+        "threshold": 0.1,
+        "accuracy": 0.7781827880512091,
+        "macro_group_accuracy": 0.7158433425289703,
+        "worst_group_accuracy": 0.24664879356568364,
+        "true_positive_rate": 0.8822827599920461,
+        "false_positive_rate": 0.23491729850111354
+      },
+      {
+        "threshold": 0.11,
+        "accuracy": 0.8044763513513513,
+        "macro_group_accuracy": 0.7287579402940925,
+        "worst_group_accuracy": 0.29222520107238603,
+        "true_positive_rate": 0.8584211572877312,
+        "false_positive_rate": 0.2023121387283237
+      },
+      {
+        "threshold": 0.12,
+        "accuracy": 0.8259246088193457,
+        "macro_group_accuracy": 0.7360221802967177,
+        "worst_group_accuracy": 0.33065236818588023,
+        "true_positive_rate": 0.8343607078942136,
+        "false_positive_rate": 0.1751370017265971
+      },
+      {
+        "threshold": 0.13,
+        "accuracy": 0.842572012802276,
+        "macro_group_accuracy": 0.7395731585391032,
+        "worst_group_accuracy": 0.3753351206434316,
+        "true_positive_rate": 0.810300258500696,
+        "false_positive_rate": 0.15336686434952332
+      },
+      {
+        "threshold": 0.14,
+        "accuracy": 0.8564411450924608,
+        "macro_group_accuracy": 0.7418544331863,
+        "worst_group_accuracy": 0.4155495978552279,
+        "true_positive_rate": 0.7854444223503678,
+        "false_positive_rate": 0.1346245276881115
+      },
+      {
+        "threshold": 0.15,
+        "accuracy": 0.867732041251778,
+        "macro_group_accuracy": 0.7453796776778907,
+        "worst_group_accuracy": 0.45308310991957107,
+        "true_positive_rate": 0.764167826605687,
+        "false_positive_rate": 0.11923529264569727
+      },
+      {
+        "threshold": 0.16,
+        "accuracy": 0.8766891891891891,
+        "macro_group_accuracy": 0.7445818721402548,
+        "worst_group_accuracy": 0.48882931188561213,
+        "true_positive_rate": 0.7379200636309405,
+        "false_positive_rate": 0.10584790931611741
+      },
+      {
+        "threshold": 0.17,
+        "accuracy": 0.8836682076813656,
+        "macro_group_accuracy": 0.7437052501322622,
+        "worst_group_accuracy": 0.517426273458445,
+        "true_positive_rate": 0.7152515410618413,
+        "false_positive_rate": 0.09513800265245352
+      },
+      {
+        "threshold": 0.18,
+        "accuracy": 0.889424786628734,
+        "macro_group_accuracy": 0.7417570205521403,
+        "worst_group_accuracy": 0.5424486148346738,
+        "true_positive_rate": 0.689998011533108,
+        "false_positive_rate": 0.08547906813802768
+      },
+      {
+        "threshold": 0.19,
+        "accuracy": 0.8947368421052632,
+        "macro_group_accuracy": 0.7433162333533261,
+        "worst_group_accuracy": 0.5509138381201044,
+        "true_positive_rate": 0.6679260290316166,
+        "false_positive_rate": 0.0767209668943773
+      },
+      {
+        "threshold": 0.2,
+        "accuracy": 0.8986041963015647,
+        "macro_group_accuracy": 0.7385059130307241,
+        "worst_group_accuracy": 0.5117493472584856,
+        "true_positive_rate": 0.6474448200437463,
+        "false_positive_rate": 0.06978955533868829
+      },
+      {
+        "threshold": 0.21,
+        "accuracy": 0.9022270625889047,
+        "macro_group_accuracy": 0.7366964425510567,
+        "worst_group_accuracy": 0.4960835509138381,
+        "true_positive_rate": 0.624776297474647,
+        "false_positive_rate": 0.06285814378299927
+      },
+      {
+        "threshold": 0.22,
+        "accuracy": 0.9042274182076814,
+        "macro_group_accuracy": 0.7305577123703986,
+        "worst_group_accuracy": 0.4621409921671018,
+        "true_positive_rate": 0.6029031616623584,
+        "false_positive_rate": 0.05785351450091335
+      },
+      {
+        "threshold": 0.23,
+        "accuracy": 0.9064722617354196,
+        "macro_group_accuracy": 0.7259538903611961,
+        "worst_group_accuracy": 0.4308093994778068,
+        "true_positive_rate": 0.5810300258500696,
+        "false_positive_rate": 0.05257363060831269
+      },
+      {
+        "threshold": 0.24,
+        "accuracy": 0.908672652916074,
+        "macro_group_accuracy": 0.7218123271461885,
+        "worst_group_accuracy": 0.402088772845953,
+        "true_positive_rate": 0.560151123483794,
+        "false_positive_rate": 0.04746890874058504
+      },
+      {
+        "threshold": 0.25,
+        "accuracy": 0.909895092460882,
+        "macro_group_accuracy": 0.7169647809939818,
+        "worst_group_accuracy": 0.3838120104438642,
+        "true_positive_rate": 0.540067607874329,
+        "false_positive_rate": 0.04356529790055801
+      },
+      {
+        "threshold": 0.26,
+        "accuracy": 0.9114731507823614,
+        "macro_group_accuracy": 0.7123632872878389,
+        "worst_group_accuracy": 0.3629242819843342,
+        "true_positive_rate": 0.5225690992244979,
+        "false_positive_rate": 0.039586617621299704
+      },
+      {
+        "threshold": 0.27,
+        "accuracy": 0.9123177453769559,
+        "macro_group_accuracy": 0.7063817268310582,
+        "worst_group_accuracy": 0.3394255874673629,
+        "true_positive_rate": 0.5042752038178564,
+        "false_positive_rate": 0.03633360858794385
+      },
+      {
+        "threshold": 0.28,
+        "accuracy": 0.9130512091038406,
+        "macro_group_accuracy": 0.699531138819325,
+        "worst_group_accuracy": 0.3133159268929504,
+        "true_positive_rate": 0.48618015510041757,
+        "false_positive_rate": 0.03323073843305057
+      },
+      {
+        "threshold": 0.29,
+        "accuracy": 0.9133623755334281,
+        "macro_group_accuracy": 0.6941168476775086,
+        "worst_group_accuracy": 0.30548302872062666,
+        "true_positive_rate": 0.4672897196261682,
+        "false_positive_rate": 0.03050321547431374
+      },
+      {
+        "threshold": 0.3,
+        "accuracy": 0.9133846017069701,
+        "macro_group_accuracy": 0.6892801507338695,
+        "worst_group_accuracy": 0.28720626631853785,
+        "true_positive_rate": 0.45058659773314774,
+        "false_positive_rate": 0.02837624802942722
+      },
+      {
+        "threshold": 0.31,
+        "accuracy": 0.9134290540540541,
+        "macro_group_accuracy": 0.683985551841795,
+        "worst_group_accuracy": 0.26631853785900783,
+        "true_positive_rate": 0.43229270232650624,
+        "false_positive_rate": 0.02602407226684683
+      },
+      {
+        "threshold": 0.32,
+        "accuracy": 0.9136513157894737,
+        "macro_group_accuracy": 0.6802526068878849,
+        "worst_group_accuracy": 0.2584856396866841,
+        "true_positive_rate": 0.417578047325512,
+        "false_positive_rate": 0.023922127968370743
+      },
+      {
+        "threshold": 0.33,
+        "accuracy": 0.9137179943100996,
+        "macro_group_accuracy": 0.6744786891111905,
+        "worst_group_accuracy": 0.2402088772845953,
+        "true_positive_rate": 0.40226685225690995,
+        "false_positive_rate": 0.021920276255536372
+      },
+      {
+        "threshold": 0.34,
+        "accuracy": 0.9138291251778093,
+        "macro_group_accuracy": 0.6707456582214713,
+        "worst_group_accuracy": 0.23237597911227154,
+        "true_positive_rate": 0.39033605090475243,
+        "false_positive_rate": 0.020293771738858445
+      },
+      {
+        "threshold": 0.35,
+        "accuracy": 0.9138068990042674,
+        "macro_group_accuracy": 0.6670651662707283,
+        "worst_group_accuracy": 0.22715404699738903,
+        "true_positive_rate": 0.3797971763770133,
+        "false_positive_rate": 0.018992568125516102
+      },
+      {
+        "threshold": 0.36,
+        "accuracy": 0.9140069345661451,
+        "macro_group_accuracy": 0.6628948888607128,
+        "worst_group_accuracy": 0.2193211488250653,
+        "true_positive_rate": 0.3682640684032611,
+        "false_positive_rate": 0.017316017316017316
+      },
+      {
+        "threshold": 0.37,
+        "accuracy": 0.9136957681365576,
+        "macro_group_accuracy": 0.6553255574815592,
+        "worst_group_accuracy": 0.195822454308094,
+        "true_positive_rate": 0.35295287333465897,
+        "false_positive_rate": 0.01573955909216025
+      },
+      {
+        "threshold": 0.38,
+        "accuracy": 0.9131845661450925,
+        "macro_group_accuracy": 0.6501966742268704,
+        "worst_group_accuracy": 0.18798955613577023,
+        "true_positive_rate": 0.3394312984688805,
+        "false_positive_rate": 0.014613517503690915
+      },
+      {
+        "threshold": 0.39,
+        "accuracy": 0.9135846372688478,
+        "macro_group_accuracy": 0.6484529468395506,
+        "worst_group_accuracy": 0.18276762402088773,
+        "true_positive_rate": 0.33187512427918076,
+        "false_positive_rate": 0.013212221304706853
+      },
+      {
+        "threshold": 0.4,
+        "accuracy": 0.9134068278805121,
+        "macro_group_accuracy": 0.6438228483380263,
+        "worst_group_accuracy": 0.16971279373368145,
+        "true_positive_rate": 0.3225293298866574,
+        "false_positive_rate": 0.012236318594700098
+      },
+      {
+        "threshold": 0.41,
+        "accuracy": 0.9129845305832148,
+        "macro_group_accuracy": 0.6386845279938376,
+        "worst_group_accuracy": 0.1618798955613577,
+        "true_positive_rate": 0.31079737522370254,
+        "false_positive_rate": 0.011235392738282913
+      },
+      {
+        "threshold": 0.42,
+        "accuracy": 0.9123844238975818,
+        "macro_group_accuracy": 0.6317179046222147,
+        "worst_group_accuracy": 0.1566579634464752,
+        "true_positive_rate": 0.298866573871545,
+        "false_positive_rate": 0.010409628906738733
+      },
+      {
+        "threshold": 0.43,
+        "accuracy": 0.9118287695590327,
+        "macro_group_accuracy": 0.6250441726821379,
+        "worst_group_accuracy": 0.14882506527415143,
+        "true_positive_rate": 0.2865380791409823,
+        "false_positive_rate": 0.009483772489552837
+      },
+      {
+        "threshold": 0.44,
+        "accuracy": 0.9116065078236131,
+        "macro_group_accuracy": 0.6230858895468319,
+        "worst_group_accuracy": 0.1409921671018277,
+        "true_positive_rate": 0.27898190495128256,
+        "false_positive_rate": 0.008783124390060806
+      },
+      {
+        "threshold": 0.45,
+        "accuracy": 0.9114064722617354,
+        "macro_group_accuracy": 0.6196432445095297,
+        "worst_group_accuracy": 0.13838120104438642,
+        "true_positive_rate": 0.27102803738317754,
+        "false_positive_rate": 0.008007406851337487
+      },
+      {
+        "threshold": 0.46,
+        "accuracy": 0.9107619132290184,
+        "macro_group_accuracy": 0.6154661028196948,
+        "worst_group_accuracy": 0.13054830287206268,
+        "true_positive_rate": 0.2602903161662358,
+        "false_positive_rate": 0.007381828191076746
+      },
+      {
+        "threshold": 0.47,
+        "accuracy": 0.9101840327169275,
+        "macro_group_accuracy": 0.6123296118709364,
+        "worst_group_accuracy": 0.12532637075718014,
+        "true_positive_rate": 0.25154106184132036,
+        "false_positive_rate": 0.006931411555689012
+      },
+      {
+        "threshold": 0.48,
+        "accuracy": 0.9095172475106685,
+        "macro_group_accuracy": 0.6083017733088375,
+        "worst_group_accuracy": 0.1227154046997389,
+        "true_positive_rate": 0.24199642075959435,
+        "false_positive_rate": 0.006480994920301279
+      },
+      {
+        "threshold": 0.49,
+        "accuracy": 0.9090504978662873,
+        "macro_group_accuracy": 0.6059415225510452,
+        "worst_group_accuracy": 0.12010443864229765,
+        "true_positive_rate": 0.23284947305627363,
+        "false_positive_rate": 0.005855416260040537
+      },
+      {
+        "threshold": 0.5,
+        "accuracy": 0.9086282005689901,
+        "macro_group_accuracy": 0.6004433694434717,
+        "worst_group_accuracy": 0.10966057441253264,
+        "true_positive_rate": 0.22529329886657387,
+        "false_positive_rate": 0.005379976478242374
+      },
+      {
+        "threshold": 0.51,
+        "accuracy": 0.9078947368421053,
+        "macro_group_accuracy": 0.5945719968686476,
+        "worst_group_accuracy": 0.10443864229765012,
+        "true_positive_rate": 0.21654404454165838,
+        "false_positive_rate": 0.005104721867727648
+      },
+      {
+        "threshold": 0.52,
+        "accuracy": 0.9073613086770982,
+        "macro_group_accuracy": 0.5907789609478855,
+        "worst_group_accuracy": 0.09660574412532637,
+        "true_positive_rate": 0.20839133028435078,
+        "false_positive_rate": 0.004679328378750344
+      },
+      {
+        "threshold": 0.53,
+        "accuracy": 0.9069612375533428,
+        "macro_group_accuracy": 0.5853500854617247,
+        "worst_group_accuracy": 0.08877284595300261,
+        "true_positive_rate": 0.20043746271624577,
+        "false_positive_rate": 0.004128819157720892
+      },
+      {
+        "threshold": 0.54,
+        "accuracy": 0.9064944879089616,
+        "macro_group_accuracy": 0.5830169091374138,
+        "worst_group_accuracy": 0.08616187989556136,
+        "true_positive_rate": 0.1934778285941539,
+        "false_positive_rate": 0.0037784951079748766
+      },
+      {
+        "threshold": 0.55,
+        "accuracy": 0.9060944167852063,
+        "macro_group_accuracy": 0.5786241491675517,
+        "worst_group_accuracy": 0.07571801566579635,
+        "true_positive_rate": 0.18751242791807515,
+        "false_positive_rate": 0.003478217351049721
+      },
+      {
+        "threshold": 0.56,
+        "accuracy": 0.9057610241820768,
+        "macro_group_accuracy": 0.5768707412484364,
+        "worst_group_accuracy": 0.0731070496083551,
+        "true_positive_rate": 0.18194472062040168,
+        "false_positive_rate": 0.0031529164477141357
+      },
+      {
+        "threshold": 0.57,
+        "accuracy": 0.9051386913229018,
+        "macro_group_accuracy": 0.573417274258389,
+        "worst_group_accuracy": 0.07049608355091384,
+        "true_positive_rate": 0.17538277987671505,
+        "false_positive_rate": 0.0030278007156619873
+      },
+      {
+        "threshold": 0.58,
+        "accuracy": 0.9044941322901849,
+        "macro_group_accuracy": 0.5690578424650461,
+        "worst_group_accuracy": 0.06527415143603134,
+        "true_positive_rate": 0.1684231457546232,
+        "false_positive_rate": 0.0028776618371994093
+      },
+      {
+        "threshold": 0.59,
+        "accuracy": 0.9041385135135135,
+        "macro_group_accuracy": 0.5677789063589783,
+        "worst_group_accuracy": 0.06005221932114883,
+        "true_positive_rate": 0.16206005170013918,
+        "false_positive_rate": 0.002477291494632535
+      },
+      {
+        "threshold": 0.6,
+        "accuracy": 0.9036717638691323,
+        "macro_group_accuracy": 0.5656873368660402,
+        "worst_group_accuracy": 0.06005221932114883,
+        "true_positive_rate": 0.15629349771326306,
+        "false_positive_rate": 0.002277106323349098
+      },
+      {
+        "threshold": 0.61,
+        "accuracy": 0.9032050142247511,
+        "macro_group_accuracy": 0.5617694406618186,
+        "worst_group_accuracy": 0.05483028720626632,
+        "true_positive_rate": 0.15012925034798172,
+        "false_positive_rate": 0.0020268748592448013
+      },
+      {
+        "threshold": 0.62,
+        "accuracy": 0.9027827169274538,
+        "macro_group_accuracy": 0.5590153423663062,
+        "worst_group_accuracy": 0.04960835509138381,
+        "true_positive_rate": 0.1451580831179161,
+        "false_positive_rate": 0.0018767359807822235
+      },
+      {
+        "threshold": 0.63,
+        "accuracy": 0.9022715149359887,
+        "macro_group_accuracy": 0.5572218736038352,
+        "worst_group_accuracy": 0.04699738903394256,
+        "true_positive_rate": 0.13939152913103997,
+        "false_positive_rate": 0.0017265971023196457
+      },
+      {
+        "threshold": 0.64,
+        "accuracy": 0.9017380867709816,
+        "macro_group_accuracy": 0.5536463284770872,
+        "worst_group_accuracy": 0.04177545691906005,
+        "true_positive_rate": 0.1334261284549612,
+        "false_positive_rate": 0.0015764582238570678
+      },
+      {
+        "threshold": 0.65,
+        "accuracy": 0.9010935277382646,
+        "macro_group_accuracy": 0.5510810382034277,
+        "worst_group_accuracy": 0.0391644908616188,
+        "true_positive_rate": 0.12567110757605887,
+        "false_positive_rate": 0.0013262267597527713
+      },
+      {
+        "threshold": 0.66,
+        "accuracy": 0.9004711948790897,
+        "macro_group_accuracy": 0.5488336865058587,
+        "worst_group_accuracy": 0.0391644908616188,
+        "true_positive_rate": 0.11930801352157487,
+        "false_positive_rate": 0.0012261341741110527
+      },
+      {
+        "threshold": 0.67,
+        "accuracy": 0.8999599928876245,
+        "macro_group_accuracy": 0.5450361197334666,
+        "worst_group_accuracy": 0.03655352480417755,
+        "true_positive_rate": 0.11374030622390137,
+        "false_positive_rate": 0.0011010184420589045
+      },
+      {
+        "threshold": 0.68,
+        "accuracy": 0.8995821479374111,
+        "macro_group_accuracy": 0.5423101968529132,
+        "worst_group_accuracy": 0.03655352480417755,
+        "true_positive_rate": 0.10896798568303838,
+        "false_positive_rate": 0.0009258564171858969
+      },
+      {
+        "threshold": 0.69,
+        "accuracy": 0.8992043029871978,
+        "macro_group_accuracy": 0.5408465415867764,
+        "worst_group_accuracy": 0.031331592689295036,
+        "true_positive_rate": 0.10479220520978326,
+        "false_positive_rate": 0.0008257638315441783
+      },
+      {
+        "threshold": 0.7,
+        "accuracy": 0.8989153627311522,
+        "macro_group_accuracy": 0.5399294351217574,
+        "worst_group_accuracy": 0.031331592689295036,
+        "true_positive_rate": 0.10161065818254127,
+        "false_positive_rate": 0.0007506943923128894
+      },
+      {
+        "threshold": 0.71,
+        "accuracy": 0.8986041963015647,
+        "macro_group_accuracy": 0.5388118104464171,
+        "worst_group_accuracy": 0.031331592689295036,
+        "true_positive_rate": 0.09823026446609665,
+        "false_positive_rate": 0.0006756249530816005
+      },
+      {
+        "threshold": 0.72,
+        "accuracy": 0.8982263513513513,
+        "macro_group_accuracy": 0.5369416867520036,
+        "worst_group_accuracy": 0.031331592689295036,
+        "true_positive_rate": 0.09425333068204414,
+        "false_positive_rate": 0.0006005555138503115
+      },
+      {
+        "threshold": 0.73,
+        "accuracy": 0.897892958748222,
+        "macro_group_accuracy": 0.5348552035118714,
+        "worst_group_accuracy": 0.02610966057441253,
+        "true_positive_rate": 0.0906740902763969,
+        "false_positive_rate": 0.0005254860746190226
+      },
+      {
+        "threshold": 0.74,
+        "accuracy": 0.8977151493598862,
+        "macro_group_accuracy": 0.5336842175142793,
+        "worst_group_accuracy": 0.02610966057441253,
+        "true_positive_rate": 0.0882879300059654,
+        "false_positive_rate": 0.000425393488977304
+      },
+      {
+        "threshold": 0.75,
+        "accuracy": 0.8972706258890469,
+        "macro_group_accuracy": 0.5322061249921297,
+        "worst_group_accuracy": 0.02610966057441253,
+        "true_positive_rate": 0.0835156094651024,
+        "false_positive_rate": 0.0003253009033355854
+      },
+      {
+        "threshold": 0.76,
+        "accuracy": 0.8969372332859175,
+        "macro_group_accuracy": 0.531003177110805,
+        "worst_group_accuracy": 0.02349869451697128,
+        "true_positive_rate": 0.08053290912706304,
+        "false_positive_rate": 0.0003253009033355854
+      },
+      {
+        "threshold": 0.77,
+        "accuracy": 0.8964704836415363,
+        "macro_group_accuracy": 0.5280489844448699,
+        "worst_group_accuracy": 0.018276762402088774,
+        "true_positive_rate": 0.07615828196460529,
+        "false_positive_rate": 0.00030027775692515574
+      },
+      {
+        "threshold": 0.78,
+        "accuracy": 0.896048186344239,
+        "macro_group_accuracy": 0.5257152589847177,
+        "worst_group_accuracy": 0.018276762402088774,
+        "true_positive_rate": 0.07218134818055279,
+        "false_positive_rate": 0.0002752546105147261
+      },
+      {
+        "threshold": 0.79,
+        "accuracy": 0.8955147581792319,
+        "macro_group_accuracy": 0.5237858316773969,
+        "worst_group_accuracy": 0.018276762402088774,
+        "true_positive_rate": 0.06721018095048717,
+        "false_positive_rate": 0.00025023146410429645
+      },
+      {
+        "threshold": 0.8,
+        "accuracy": 0.8951146870554765,
+        "macro_group_accuracy": 0.5219478295689464,
+        "worst_group_accuracy": 0.015665796344647518,
+        "true_positive_rate": 0.06363094054483993,
+        "false_positive_rate": 0.00025023146410429645
+      },
+      {
+        "threshold": 0.81,
+        "accuracy": 0.8948701991465149,
+        "macro_group_accuracy": 0.5211094661412936,
+        "worst_group_accuracy": 0.015665796344647518,
+        "true_positive_rate": 0.06144362696361105,
+        "false_positive_rate": 0.00025023146410429645
+      },
+      {
+        "threshold": 0.82,
+        "accuracy": 0.894270092460882,
+        "macro_group_accuracy": 0.5184409080650489,
+        "worst_group_accuracy": 0.015665796344647518,
+        "true_positive_rate": 0.055875919665937565,
+        "false_positive_rate": 0.00022520831769386684
+      },
+      {
+        "threshold": 0.83,
+        "accuracy": 0.8939366998577525,
+        "macro_group_accuracy": 0.5171266116915408,
+        "worst_group_accuracy": 0.015665796344647518,
+        "true_positive_rate": 0.052495525949492944,
+        "false_positive_rate": 0.00017516202487300754
+      },
+      {
+        "threshold": 0.84,
+        "accuracy": 0.8935366287339972,
+        "macro_group_accuracy": 0.5165465599461612,
+        "worst_group_accuracy": 0.015665796344647518,
+        "true_positive_rate": 0.048916285543845694,
+        "false_positive_rate": 0.00017516202487300754
+      },
+      {
+        "threshold": 0.85,
+        "accuracy": 0.8930698790896159,
+        "macro_group_accuracy": 0.5149365730165825,
+        "worst_group_accuracy": 0.010443864229765013,
+        "true_positive_rate": 0.044740505070590575,
+        "false_positive_rate": 0.00017516202487300754
+      },
+      {
+        "threshold": 0.86,
+        "accuracy": 0.8927142603129445,
+        "macro_group_accuracy": 0.5133970054128114,
+        "worst_group_accuracy": 0.010443864229765013,
+        "true_positive_rate": 0.04155895804334858,
+        "false_positive_rate": 0.00017516202487300754
+      },
+      {
+        "threshold": 0.87,
+        "accuracy": 0.892447546230441,
+        "macro_group_accuracy": 0.5120993377919298,
+        "worst_group_accuracy": 0.010443864229765013,
+        "true_positive_rate": 0.03917279777291708,
+        "false_positive_rate": 0.00017516202487300754
+      },
+      {
+        "threshold": 0.88,
+        "accuracy": 0.8922030583214794,
+        "macro_group_accuracy": 0.5108503911925266,
+        "worst_group_accuracy": 0.007832898172323759,
+        "true_positive_rate": 0.036388944124080336,
+        "false_positive_rate": 0.0001000925856417186
+      },
+      {
+        "threshold": 0.89,
+        "accuracy": 0.891825213371266,
+        "macro_group_accuracy": 0.5095016122895099,
+        "worst_group_accuracy": 0.005221932114882507,
+        "true_positive_rate": 0.033008550407635714,
+        "false_positive_rate": 0.0001000925856417186
+      },
+      {
+        "threshold": 0.9,
+        "accuracy": 0.8915140469416786,
+        "macro_group_accuracy": 0.5081657929119525,
+        "worst_group_accuracy": 0.005221932114882507,
+        "true_positive_rate": 0.030025850069596342,
+        "false_positive_rate": 7.506943923128894e-05
+      },
+      {
+        "threshold": 0.91,
+        "accuracy": 0.891247332859175,
+        "macro_group_accuracy": 0.5077285431405165,
+        "worst_group_accuracy": 0.005221932114882507,
+        "true_positive_rate": 0.027241996420759595,
+        "false_positive_rate": 2.502314641042965e-05
+      },
+      {
+        "threshold": 0.92,
+        "accuracy": 0.8908694879089616,
+        "macro_group_accuracy": 0.5069780683149852,
+        "worst_group_accuracy": 0.005221932114882507,
+        "true_positive_rate": 0.023861602704314974,
+        "false_positive_rate": 2.502314641042965e-05
+      },
+      {
+        "threshold": 0.93,
+        "accuracy": 0.8905360953058321,
+        "macro_group_accuracy": 0.5055333240948819,
+        "worst_group_accuracy": 0.0019569471624266144,
+        "true_positive_rate": 0.0208789023662756,
+        "false_positive_rate": 2.502314641042965e-05
+      },
+      {
+        "threshold": 0.94,
+        "accuracy": 0.8903138335704125,
+        "macro_group_accuracy": 0.5042829734366393,
+        "worst_group_accuracy": 0.0,
+        "true_positive_rate": 0.018691588785046728,
+        "false_positive_rate": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "accuracy": 0.8901582503556188,
+        "macro_group_accuracy": 0.5041650489083374,
+        "worst_group_accuracy": 0.0,
+        "true_positive_rate": 0.017299661960628356,
+        "false_positive_rate": 0.0
+      }
+    ],
+    "group_reweighted": [
+      {
+        "threshold": 0.05,
+        "accuracy": 0.2370199146514936,
+        "macro_group_accuracy": 0.537449120043419,
+        "worst_group_accuracy": 0.017456359102244388,
+        "true_positive_rate": 0.9966196062835554,
+        "false_positive_rate": 0.8585691764882516
+      },
+      {
+        "threshold": 0.06,
+        "accuracy": 0.28722884068278803,
+        "macro_group_accuracy": 0.5542511509852179,
+        "worst_group_accuracy": 0.0344139650872818,
+        "true_positive_rate": 0.9950288327699344,
+        "false_positive_rate": 0.8018417035758076
+      },
+      {
+        "threshold": 0.07,
+        "accuracy": 0.3393714438122333,
+        "macro_group_accuracy": 0.5690447145577278,
+        "worst_group_accuracy": 0.04837905236907731,
+        "true_positive_rate": 0.9908530522966793,
+        "false_positive_rate": 0.7426119160223207
+      },
+      {
+        "threshold": 0.08,
+        "accuracy": 0.39000266714082504,
+        "macro_group_accuracy": 0.5848717906845665,
+        "worst_group_accuracy": 0.06932668329177058,
+        "true_positive_rate": 0.9854841916882084,
+        "false_positive_rate": 0.6849335635462803
+      },
+      {
+        "threshold": 0.09,
+        "accuracy": 0.43790007112375534,
+        "macro_group_accuracy": 0.6016738981198541,
+        "worst_group_accuracy": 0.08778054862842893,
+        "true_positive_rate": 0.9787234042553191,
+        "false_positive_rate": 0.6301578960538499
+      },
+      {
+        "threshold": 0.1,
+        "accuracy": 0.4796408250355619,
+        "macro_group_accuracy": 0.616662323579602,
+        "worst_group_accuracy": 0.10922693266832918,
+        "true_positive_rate": 0.9719626168224299,
+        "false_positive_rate": 0.5823136401171083
+      },
+      {
+        "threshold": 0.11,
+        "accuracy": 0.5203369487908962,
+        "macro_group_accuracy": 0.6299989466029693,
+        "worst_group_accuracy": 0.13216957605985039,
+        "true_positive_rate": 0.9624179757407039,
+        "false_positive_rate": 0.535295148011911
+      },
+      {
+        "threshold": 0.12,
+        "accuracy": 0.5581436699857752,
+        "macro_group_accuracy": 0.6427578350165624,
+        "worst_group_accuracy": 0.15810473815461346,
+        "true_positive_rate": 0.9542652614833963,
+        "false_positive_rate": 0.49170482696494255
+      },
+      {
+        "threshold": 0.13,
+        "accuracy": 0.5946834992887624,
+        "macro_group_accuracy": 0.6535414294122033,
+        "worst_group_accuracy": 0.17855361596009975,
+        "true_positive_rate": 0.9467090872936965,
+        "false_positive_rate": 0.4496158947025999
+      },
+      {
+        "threshold": 0.14,
+        "accuracy": 0.6267336415362731,
+        "macro_group_accuracy": 0.6670895626619696,
+        "worst_group_accuracy": 0.2,
+        "true_positive_rate": 0.9375621395903758,
+        "false_positive_rate": 0.4123814528438806
+      },
+      {
+        "threshold": 0.15,
+        "accuracy": 0.6542496443812233,
+        "macro_group_accuracy": 0.6748677253989377,
+        "worst_group_accuracy": 0.22244389027431422,
+        "true_positive_rate": 0.9278186518194472,
+        "false_positive_rate": 0.38017666341365763
+      },
+      {
+        "threshold": 0.16,
+        "accuracy": 0.6804320768136558,
+        "macro_group_accuracy": 0.685440936025465,
+        "worst_group_accuracy": 0.2458852867830424,
+        "true_positive_rate": 0.9180751640485186,
+        "false_positive_rate": 0.34947326276806046
+      },
+      {
+        "threshold": 0.17,
+        "accuracy": 0.703169452347084,
+        "macro_group_accuracy": 0.6924700187657442,
+        "worst_group_accuracy": 0.2688279301745636,
+        "true_positive_rate": 0.9071385961423742,
+        "false_positive_rate": 0.32249831093761727
+      },
+      {
+        "threshold": 0.18,
+        "accuracy": 0.724128733997155,
+        "macro_group_accuracy": 0.7007464072202529,
+        "worst_group_accuracy": 0.2947630922693267,
+        "true_positive_rate": 0.895605488168622,
+        "false_positive_rate": 0.29745014138077724
+      },
+      {
+        "threshold": 0.19,
+        "accuracy": 0.7430209815078236,
+        "macro_group_accuracy": 0.7090552513829831,
+        "worst_group_accuracy": 0.3154602323503128,
+        "true_positive_rate": 0.8842712268840723,
+        "false_positive_rate": 0.2747541475865175
+      },
+      {
+        "threshold": 0.2,
+        "accuracy": 0.7596239331436699,
+        "macro_group_accuracy": 0.7148702190622415,
+        "worst_group_accuracy": 0.33690795352993747,
+        "true_positive_rate": 0.8727381189103202,
+        "false_positive_rate": 0.2546105147261217
+      },
+      {
+        "threshold": 0.21,
+        "accuracy": 0.7750044452347084,
+        "macro_group_accuracy": 0.7215734835158241,
+        "worst_group_accuracy": 0.36193029490616624,
+        "true_positive_rate": 0.862199244382581,
+        "false_positive_rate": 0.23596827065035159
+      },
+      {
+        "threshold": 0.22,
+        "accuracy": 0.7880512091038406,
+        "macro_group_accuracy": 0.7233231413913195,
+        "worst_group_accuracy": 0.37980339588918677,
+        "true_positive_rate": 0.8480811294491947,
+        "false_positive_rate": 0.21950304031228887
+      },
+      {
+        "threshold": 0.23,
+        "accuracy": 0.799897759601707,
+        "macro_group_accuracy": 0.7273601276163021,
+        "worst_group_accuracy": 0.4049875311720698,
+        "true_positive_rate": 0.8365480214754424,
+        "false_positive_rate": 0.20471436078372496
+      },
+      {
+        "threshold": 0.24,
+        "accuracy": 0.8105663229018493,
+        "macro_group_accuracy": 0.7304006228572407,
+        "worst_group_accuracy": 0.4204488778054863,
+        "true_positive_rate": 0.8260091469477033,
+        "false_positive_rate": 0.19137702374696594
+      },
+      {
+        "threshold": 0.25,
+        "accuracy": 0.8209459459459459,
+        "macro_group_accuracy": 0.7350964185741201,
+        "worst_group_accuracy": 0.4394014962593516,
+        "true_positive_rate": 0.8122887253927222,
+        "false_positive_rate": 0.17796461727097565
+      },
+      {
+        "threshold": 0.26,
+        "accuracy": 0.8301031294452347,
+        "macro_group_accuracy": 0.7393102907206379,
+        "worst_group_accuracy": 0.45486284289276807,
+        "true_positive_rate": 0.7999602306621595,
+        "false_positive_rate": 0.166103645872432
+      },
+      {
+        "threshold": 0.27,
+        "accuracy": 0.8387268847795164,
+        "macro_group_accuracy": 0.742362458357557,
+        "worst_group_accuracy": 0.4718204488778055,
+        "true_positive_rate": 0.7886259693776099,
+        "false_positive_rate": 0.15496834571979082
+      },
+      {
+        "threshold": 0.28,
+        "accuracy": 0.8460170697012802,
+        "macro_group_accuracy": 0.7456125031518119,
+        "worst_group_accuracy": 0.4882793017456359,
+        "true_positive_rate": 0.7772917080930603,
+        "false_positive_rate": 0.1453344343517754
+      },
+      {
+        "threshold": 0.29,
+        "accuracy": 0.8533961593172119,
+        "macro_group_accuracy": 0.7493870508733715,
+        "worst_group_accuracy": 0.5117206982543641,
+        "true_positive_rate": 0.7645655199840923,
+        "false_positive_rate": 0.13542526837324526
+      },
+      {
+        "threshold": 0.3,
+        "accuracy": 0.859397226173542,
+        "macro_group_accuracy": 0.7512428309454229,
+        "worst_group_accuracy": 0.5276807980049876,
+        "true_positive_rate": 0.7494531716046928,
+        "false_positive_rate": 0.12676725971523659
+      },
+      {
+        "threshold": 0.31,
+        "accuracy": 0.8648870910384068,
+        "macro_group_accuracy": 0.7534893835381966,
+        "worst_group_accuracy": 0.5466334164588529,
+        "true_positive_rate": 0.7357327500497117,
+        "false_positive_rate": 0.11885994544954083
+      },
+      {
+        "threshold": 0.32,
+        "accuracy": 0.8698879800853485,
+        "macro_group_accuracy": 0.7512891146393519,
+        "worst_group_accuracy": 0.5640897755610973,
+        "true_positive_rate": 0.7222111751839332,
+        "false_positive_rate": 0.11152816355128493
+      },
+      {
+        "threshold": 0.33,
+        "accuracy": 0.8733774893314367,
+        "macro_group_accuracy": 0.7495999438054264,
+        "worst_group_accuracy": 0.5770573566084788,
+        "true_positive_rate": 0.7067011334261285,
+        "false_positive_rate": 0.10564772414483398
+      },
+      {
+        "threshold": 0.34,
+        "accuracy": 0.8768669985775249,
+        "macro_group_accuracy": 0.7474073791897797,
+        "worst_group_accuracy": 0.5915211970074813,
+        "true_positive_rate": 0.6913899383575264,
+        "false_positive_rate": 0.09979230788479343
+      },
+      {
+        "threshold": 0.35,
+        "accuracy": 0.8808010312944523,
+        "macro_group_accuracy": 0.7472502838486732,
+        "worst_group_accuracy": 0.6049875311720698,
+        "true_positive_rate": 0.6780672101809505,
+        "false_positive_rate": 0.0936866601606486
+      },
+      {
+        "threshold": 0.36,
+        "accuracy": 0.8842905405405406,
+        "macro_group_accuracy": 0.7479615722200013,
+        "worst_group_accuracy": 0.6161879895561357,
+        "true_positive_rate": 0.666136408828793,
+        "false_positive_rate": 0.08825663738958536
+      },
+      {
+        "threshold": 0.37,
+        "accuracy": 0.8875355618776671,
+        "macro_group_accuracy": 0.748263132585499,
+        "worst_group_accuracy": 0.6031331592689295,
+        "true_positive_rate": 0.6551998409226486,
+        "false_positive_rate": 0.083226984961089
+      },
+      {
+        "threshold": 0.38,
+        "accuracy": 0.890602773826458,
+        "macro_group_accuracy": 0.7466669302947013,
+        "worst_group_accuracy": 0.5848563968668408,
+        "true_positive_rate": 0.6424736528136806,
+        "false_positive_rate": 0.07817230938618222
+      },
+      {
+        "threshold": 0.39,
+        "accuracy": 0.8932476884779517,
+        "macro_group_accuracy": 0.7443594791359052,
+        "worst_group_accuracy": 0.5796344647519582,
+        "true_positive_rate": 0.6293497713263074,
+        "false_positive_rate": 0.07354302730025274
+      },
+      {
+        "threshold": 0.4,
+        "accuracy": 0.8960926386913229,
+        "macro_group_accuracy": 0.7444068923020772,
+        "worst_group_accuracy": 0.5691906005221932,
+        "true_positive_rate": 0.6182143567309605,
+        "false_positive_rate": 0.06893876836073368
+      },
+      {
+        "threshold": 0.41,
+        "accuracy": 0.8975151137980085,
+        "macro_group_accuracy": 0.7403953104587594,
+        "worst_group_accuracy": 0.5509138381201044,
+        "true_positive_rate": 0.6034997017299661,
+        "false_positive_rate": 0.06548557415609439
+      },
+      {
+        "threshold": 0.42,
+        "accuracy": 0.8989375889046942,
+        "macro_group_accuracy": 0.7338171197768373,
+        "worst_group_accuracy": 0.5300261096605744,
+        "true_positive_rate": 0.5879896599721615,
+        "false_positive_rate": 0.061932287365813375
+      },
+      {
+        "threshold": 0.43,
+        "accuracy": 0.9004934210526315,
+        "macro_group_accuracy": 0.7282392628258847,
+        "worst_group_accuracy": 0.5061728395061729,
+        "true_positive_rate": 0.5726784649035593,
+        "false_positive_rate": 0.05825388484348022
+      },
+      {
+        "threshold": 0.44,
+        "accuracy": 0.9020714793741109,
+        "macro_group_accuracy": 0.7251900460280354,
+        "worst_group_accuracy": 0.49382716049382713,
+        "true_positive_rate": 0.558560349970173,
+        "false_positive_rate": 0.05470059805319921
+      },
+      {
+        "threshold": 0.45,
+        "accuracy": 0.9034717283072546,
+        "macro_group_accuracy": 0.7214943535992802,
+        "worst_group_accuracy": 0.47530864197530864,
+        "true_positive_rate": 0.545834161861205,
+        "false_positive_rate": 0.051522658459074645
+      },
+      {
+        "threshold": 0.46,
+        "accuracy": 0.9046719416785206,
+        "macro_group_accuracy": 0.7208292899078982,
+        "worst_group_accuracy": 0.46296296296296297,
+        "true_positive_rate": 0.5333068204414396,
+        "false_positive_rate": 0.04859495032905437
+      },
+      {
+        "threshold": 0.47,
+        "accuracy": 0.9058721550497866,
+        "macro_group_accuracy": 0.7182629844200697,
+        "worst_group_accuracy": 0.4506172839506173,
+        "true_positive_rate": 0.5205806323324716,
+        "false_positive_rate": 0.045642219052623674
+      },
+      {
+        "threshold": 0.48,
+        "accuracy": 0.9065167140825036,
+        "macro_group_accuracy": 0.7156574072580351,
+        "worst_group_accuracy": 0.4382716049382716,
+        "true_positive_rate": 0.507655597534301,
+        "false_positive_rate": 0.04329004329004329
+      },
+      {
+        "threshold": 0.49,
+        "accuracy": 0.907427987197724,
+        "macro_group_accuracy": 0.7126361265136237,
+        "worst_group_accuracy": 0.4382716049382716,
+        "true_positive_rate": 0.49393517597931996,
+        "false_positive_rate": 0.04053749718489603
+      },
+      {
+        "threshold": 0.5,
+        "accuracy": 0.908094772403983,
+        "macro_group_accuracy": 0.7095633323099837,
+        "worst_group_accuracy": 0.42297650130548303,
+        "true_positive_rate": 0.48120898787035193,
+        "false_positive_rate": 0.03818532142231564
+      },
+      {
+        "threshold": 0.51,
+        "accuracy": 0.9089171408250356,
+        "macro_group_accuracy": 0.7068504095726754,
+        "worst_group_accuracy": 0.40992167101827676,
+        "true_positive_rate": 0.47067011334261283,
+        "false_positive_rate": 0.035933238245376975
+      },
+      {
+        "threshold": 0.52,
+        "accuracy": 0.9095616998577525,
+        "macro_group_accuracy": 0.7031609175768129,
+        "worst_group_accuracy": 0.391644908616188,
+        "true_positive_rate": 0.4597335454364685,
+        "false_positive_rate": 0.03383129394690088
+      },
+      {
+        "threshold": 0.53,
+        "accuracy": 0.9101173541963016,
+        "macro_group_accuracy": 0.7001225831478922,
+        "worst_group_accuracy": 0.37597911227154046,
+        "true_positive_rate": 0.44740505070590575,
+        "false_positive_rate": 0.0316542802091935
+      },
+      {
+        "threshold": 0.54,
+        "accuracy": 0.910472972972973,
+        "macro_group_accuracy": 0.6945542683358457,
+        "worst_group_accuracy": 0.3681462140992167,
+        "true_positive_rate": 0.4348777092861404,
+        "false_positive_rate": 0.02967745164276956
+      },
+      {
+        "threshold": 0.55,
+        "accuracy": 0.9108508179231863,
+        "macro_group_accuracy": 0.6911899524817746,
+        "worst_group_accuracy": 0.3629242819843342,
+        "true_positive_rate": 0.42314575462318554,
+        "false_positive_rate": 0.02777569251557691
+      },
+      {
+        "threshold": 0.56,
+        "accuracy": 0.9109174964438123,
+        "macro_group_accuracy": 0.6863923523727535,
+        "worst_group_accuracy": 0.3524804177545692,
+        "true_positive_rate": 0.41220918671704115,
+        "false_positive_rate": 0.026324350023771988
+      },
+      {
+        "threshold": 0.57,
+        "accuracy": 0.911650960170697,
+        "macro_group_accuracy": 0.6845164524685969,
+        "worst_group_accuracy": 0.34464751958224543,
+        "true_positive_rate": 0.4034599323921257,
+        "false_positive_rate": 0.024397567750168905
+      },
+      {
+        "threshold": 0.58,
+        "accuracy": 0.9125400071123755,
+        "macro_group_accuracy": 0.6814142021006934,
+        "worst_group_accuracy": 0.33159268929503916,
+        "true_positive_rate": 0.3963014515808312,
+        "false_positive_rate": 0.022495808622976253
+      },
+      {
+        "threshold": 0.59,
+        "accuracy": 0.9123177453769559,
+        "macro_group_accuracy": 0.675207141471397,
+        "worst_group_accuracy": 0.3237597911227154,
+        "true_positive_rate": 0.3825810300258501,
+        "false_positive_rate": 0.021019442984760904
+      },
+      {
+        "threshold": 0.6,
+        "accuracy": 0.9123399715504978,
+        "macro_group_accuracy": 0.672222227393205,
+        "worst_group_accuracy": 0.31070496083550914,
+        "true_positive_rate": 0.3732352356333267,
+        "false_positive_rate": 0.01981833195706028
+      },
+      {
+        "threshold": 0.61,
+        "accuracy": 0.9121843883357041,
+        "macro_group_accuracy": 0.66754376255565,
+        "worst_group_accuracy": 0.29012345679012347,
+        "true_positive_rate": 0.3611055875919666,
+        "false_positive_rate": 0.01846708205089708
+      },
+      {
+        "threshold": 0.62,
+        "accuracy": 0.9118732219061166,
+        "macro_group_accuracy": 0.6639773278957115,
+        "worst_group_accuracy": 0.28720626631853785,
+        "true_positive_rate": 0.34897593955060646,
+        "false_positive_rate": 0.017290994169606888
+      },
+      {
+        "threshold": 0.63,
+        "accuracy": 0.9115398293029872,
+        "macro_group_accuracy": 0.6590580815737062,
+        "worst_group_accuracy": 0.2716049382716049,
+        "true_positive_rate": 0.33585205806323326,
+        "false_positive_rate": 0.016014813702674973
+      },
+      {
+        "threshold": 0.64,
+        "accuracy": 0.9114509246088194,
+        "macro_group_accuracy": 0.6539749678934124,
+        "worst_group_accuracy": 0.25308641975308643,
+        "true_positive_rate": 0.3263074169815073,
+        "false_positive_rate": 0.01491379526061607
+      },
+      {
+        "threshold": 0.65,
+        "accuracy": 0.9109397226173542,
+        "macro_group_accuracy": 0.6500813471457343,
+        "worst_group_accuracy": 0.2402088772845953,
+        "true_positive_rate": 0.3145754623185524,
+        "false_positive_rate": 0.014012961989840603
+      },
+      {
+        "threshold": 0.66,
+        "accuracy": 0.9107174608819346,
+        "macro_group_accuracy": 0.645325353989082,
+        "worst_group_accuracy": 0.2222222222222222,
+        "true_positive_rate": 0.3050308212368264,
+        "false_positive_rate": 0.013062082426244275
+      },
+      {
+        "threshold": 0.67,
+        "accuracy": 0.9106063300142248,
+        "macro_group_accuracy": 0.6405340448122616,
+        "worst_group_accuracy": 0.2222222222222222,
+        "true_positive_rate": 0.2960827202227083,
+        "false_positive_rate": 0.01206115656982709
+      },
+      {
+        "threshold": 0.68,
+        "accuracy": 0.9102062588904695,
+        "macro_group_accuracy": 0.6362034259037506,
+        "worst_group_accuracy": 0.20987654320987653,
+        "true_positive_rate": 0.28514615231656393,
+        "false_positive_rate": 0.011135300152641194
+      },
+      {
+        "threshold": 0.69,
+        "accuracy": 0.9096061522048364,
+        "macro_group_accuracy": 0.6314290662441222,
+        "worst_group_accuracy": 0.20987654320987653,
+        "true_positive_rate": 0.27182342413998806,
+        "false_positive_rate": 0.010134374296224007
+      },
+      {
+        "threshold": 0.7,
+        "accuracy": 0.9091394025604552,
+        "macro_group_accuracy": 0.6284472090165649,
+        "worst_group_accuracy": 0.20987654320987653,
+        "true_positive_rate": 0.26148339630145156,
+        "false_positive_rate": 0.009358656757500689
+      },
+      {
+        "threshold": 0.71,
+        "accuracy": 0.908650426742532,
+        "macro_group_accuracy": 0.623651519723561,
+        "worst_group_accuracy": 0.19135802469135801,
+        "true_positive_rate": 0.2511433684629151,
+        "false_positive_rate": 0.008607962365187799
+      },
+      {
+        "threshold": 0.72,
+        "accuracy": 0.9084059388335705,
+        "macro_group_accuracy": 0.6195788967928686,
+        "worst_group_accuracy": 0.19135802469135801,
+        "true_positive_rate": 0.24219526744879696,
+        "false_positive_rate": 0.007757175387233191
+      },
+      {
+        "threshold": 0.73,
+        "accuracy": 0.9078280583214794,
+        "macro_group_accuracy": 0.6147502033510858,
+        "worst_group_accuracy": 0.18518518518518517,
+        "true_positive_rate": 0.23284947305627363,
+        "false_positive_rate": 0.007231689312614168
+      },
+      {
+        "threshold": 0.74,
+        "accuracy": 0.9069612375533428,
+        "macro_group_accuracy": 0.6073901274522018,
+        "worst_group_accuracy": 0.17232375979112272,
+        "true_positive_rate": 0.219924438258103,
+        "false_positive_rate": 0.006581087505942997
+      },
+      {
+        "threshold": 0.75,
+        "accuracy": 0.90625,
+        "macro_group_accuracy": 0.5998942323865468,
+        "worst_group_accuracy": 0.1566579634464752,
+        "true_positive_rate": 0.208789023662756,
+        "false_positive_rate": 0.005980531992092686
+      },
+      {
+        "threshold": 0.76,
+        "accuracy": 0.9058277027027027,
+        "macro_group_accuracy": 0.5966239416104246,
+        "worst_group_accuracy": 0.15404699738903394,
+        "true_positive_rate": 0.20083515609465102,
+        "false_positive_rate": 0.005455045917473663
+      },
+      {
+        "threshold": 0.77,
+        "accuracy": 0.9053387268847796,
+        "macro_group_accuracy": 0.5931588958083508,
+        "worst_group_accuracy": 0.1462140992167102,
+        "true_positive_rate": 0.19248359514814078,
+        "false_positive_rate": 0.00495458298926507
+      },
+      {
+        "threshold": 0.78,
+        "accuracy": 0.9048719772403983,
+        "macro_group_accuracy": 0.5885362495631434,
+        "worst_group_accuracy": 0.13838120104438642,
+        "true_positive_rate": 0.18512626764764367,
+        "false_positive_rate": 0.004554212646698196
+      },
+      {
+        "threshold": 0.79,
+        "accuracy": 0.9041162873399715,
+        "macro_group_accuracy": 0.5828069644663368,
+        "worst_group_accuracy": 0.13054830287206268,
+        "true_positive_rate": 0.17538277987671505,
+        "false_positive_rate": 0.004178865450541751
+      },
+      {
+        "threshold": 0.8,
+        "accuracy": 0.9033828236130867,
+        "macro_group_accuracy": 0.5781213338895865,
+        "worst_group_accuracy": 0.1122715404699739,
+        "true_positive_rate": 0.16544044541658381,
+        "false_positive_rate": 0.003753471961564447
+      },
+      {
+        "threshold": 0.81,
+        "accuracy": 0.9029160739687055,
+        "macro_group_accuracy": 0.5741591472808375,
+        "worst_group_accuracy": 0.10493827160493827,
+        "true_positive_rate": 0.1572877311592762,
+        "false_positive_rate": 0.003253009033355854
+      },
+      {
+        "threshold": 0.82,
+        "accuracy": 0.9024270981507824,
+        "macro_group_accuracy": 0.5690378113432429,
+        "worst_group_accuracy": 0.09259259259259259,
+        "true_positive_rate": 0.14993040365877908,
+        "false_positive_rate": 0.0028776618371994093
+      },
+      {
+        "threshold": 0.83,
+        "accuracy": 0.9019603485064012,
+        "macro_group_accuracy": 0.5655981676262659,
+        "worst_group_accuracy": 0.09259259259259259,
+        "true_positive_rate": 0.14177768940147145,
+        "false_positive_rate": 0.0023771989089908167
+      },
+      {
+        "threshold": 0.84,
+        "accuracy": 0.9011824324324325,
+        "macro_group_accuracy": 0.561489320729664,
+        "worst_group_accuracy": 0.08877284595300261,
+        "true_positive_rate": 0.13243189500894811,
+        "false_positive_rate": 0.0020769211520656606
+      },
+      {
+        "threshold": 0.85,
+        "accuracy": 0.9005156472261735,
+        "macro_group_accuracy": 0.5579382144461641,
+        "worst_group_accuracy": 0.08093994778067885,
+        "true_positive_rate": 0.12507456750845097,
+        "false_positive_rate": 0.0019017591271926532
+      },
+      {
+        "threshold": 0.86,
+        "accuracy": 0.899648826458037,
+        "macro_group_accuracy": 0.5529067748975243,
+        "worst_group_accuracy": 0.07407407407407407,
+        "true_positive_rate": 0.1147345396699145,
+        "false_positive_rate": 0.0015764582238570678
+      },
+      {
+        "threshold": 0.87,
+        "accuracy": 0.8989153627311522,
+        "macro_group_accuracy": 0.548146864700081,
+        "worst_group_accuracy": 0.06788511749347259,
+        "true_positive_rate": 0.10638297872340426,
+        "false_positive_rate": 0.001351249906163201
+      },
+      {
+        "threshold": 0.88,
+        "accuracy": 0.8984930654338549,
+        "macro_group_accuracy": 0.543733195569288,
+        "worst_group_accuracy": 0.06005221932114883,
+        "true_positive_rate": 0.09902565122290714,
+        "false_positive_rate": 0.0009008332707754673
+      },
+      {
+        "threshold": 0.89,
+        "accuracy": 0.8979151849217639,
+        "macro_group_accuracy": 0.5408507134318308,
+        "worst_group_accuracy": 0.05221932114882506,
+        "true_positive_rate": 0.09266255716842314,
+        "false_positive_rate": 0.0007506943923128894
+      },
+      {
+        "threshold": 0.9,
+        "accuracy": 0.8973150782361309,
+        "macro_group_accuracy": 0.5356767789732513,
+        "worst_group_accuracy": 0.044386422976501305,
+        "true_positive_rate": 0.08610061642473653,
+        "false_positive_rate": 0.0006005555138503115
+      },
+      {
+        "threshold": 0.91,
+        "accuracy": 0.8962037695590327,
+        "macro_group_accuracy": 0.5306614556118763,
+        "worst_group_accuracy": 0.028720626631853787,
+        "true_positive_rate": 0.07576058858620004,
+        "false_positive_rate": 0.0005505092210294523
+      },
+      {
+        "threshold": 0.92,
+        "accuracy": 0.8952924964438123,
+        "macro_group_accuracy": 0.5263002230294633,
+        "worst_group_accuracy": 0.028720626631853787,
+        "true_positive_rate": 0.0666136408828793,
+        "false_positive_rate": 0.000425393488977304
+      },
+      {
+        "threshold": 0.93,
+        "accuracy": 0.8944923541963016,
+        "macro_group_accuracy": 0.5235149734217479,
+        "worst_group_accuracy": 0.02349869451697128,
+        "true_positive_rate": 0.05865977331477431,
+        "false_positive_rate": 0.0003253009033355854
+      },
+      {
+        "threshold": 0.94,
+        "accuracy": 0.8932921408250356,
+        "macro_group_accuracy": 0.517258588624378,
+        "worst_group_accuracy": 0.015665796344647518,
+        "true_positive_rate": 0.04772320540862995,
+        "false_positive_rate": 0.00030027775692515574
+      },
+      {
+        "threshold": 0.95,
+        "accuracy": 0.8926031294452347,
+        "macro_group_accuracy": 0.5149303933708009,
+        "worst_group_accuracy": 0.015665796344647518,
+        "true_positive_rate": 0.040962417975740704,
+        "false_positive_rate": 0.00022520831769386684
+      }
+    ]
+  },
+  "features": 80000,
+  "train_matrix_nnz": 20166743,
+  "training_seconds": 38.207144337007776,
+  "model_artifact_committed": false
+}

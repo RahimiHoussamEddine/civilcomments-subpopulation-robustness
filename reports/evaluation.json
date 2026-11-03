@@ -1,0 +1,651 @@
+{
+  "dataset": "WILDS CivilComments v1.0",
+  "test_rows": 133781,
+  "test_articles": 20943,
+  "toxicity_label_rule": "source toxicity score >= 0.5",
+  "group_definition": "One of eight identity-mention annotations >= 0.5 crossed with toxicity label; groups overlap",
+  "row_exclusions": {
+    "train_removed_for_empty_or_duplicate_text": 1369,
+    "val_removed_for_empty_or_duplicate_text": 188,
+    "test_removed_for_empty_or_duplicate_text": 1
+  },
+  "test_labels_used_for_model_or_threshold_selection": false,
+  "validation_selection": {
+    "erm": {
+      "alpha": 1e-05,
+      "threshold_objective": "validation average accuracy",
+      "threshold": 0.36,
+      "validation_metrics": {
+        "accuracy": 0.9140069345661451,
+        "macro_group_accuracy": 0.6628948888607128,
+        "worst_group_accuracy": 0.2193211488250653,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 4046,
+            "accuracy": 0.9700939199209095
+          },
+          {
+            "group": "male|1",
+            "count": 713,
+            "accuracy": 0.40953716690042075
+          },
+          {
+            "group": "female|0",
+            "count": 5114,
+            "accuracy": 0.9753617520531873
+          },
+          {
+            "group": "female|1",
+            "count": 769,
+            "accuracy": 0.36280884265279584
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 1097,
+            "accuracy": 0.9434822242479489
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 357,
+            "accuracy": 0.37254901960784315
+          },
+          {
+            "group": "christian|0",
+            "count": 4163,
+            "accuracy": 0.988950276243094
+          },
+          {
+            "group": "christian|1",
+            "count": 383,
+            "accuracy": 0.2193211488250653
+          },
+          {
+            "group": "muslim|0",
+            "count": 1592,
+            "accuracy": 0.9409547738693468
+          },
+          {
+            "group": "muslim|1",
+            "count": 511,
+            "accuracy": 0.3972602739726027
+          },
+          {
+            "group": "other_religions|0",
+            "count": 822,
+            "accuracy": 0.9671532846715328
+          },
+          {
+            "group": "other_religions|1",
+            "count": 162,
+            "accuracy": 0.30246913580246915
+          },
+          {
+            "group": "black|0",
+            "count": 1119,
+            "accuracy": 0.8543342269883825
+          },
+          {
+            "group": "black|1",
+            "count": 530,
+            "accuracy": 0.5113207547169811
+          },
+          {
+            "group": "white|0",
+            "count": 2005,
+            "accuracy": 0.8688279301745636
+          },
+          {
+            "group": "white|1",
+            "count": 845,
+            "accuracy": 0.5218934911242603
+          }
+        ],
+        "threshold": 0.36,
+        "roc_auc": 0.9076685728492533,
+        "average_precision": 0.6287463132629052,
+        "brier_score": 0.0667847705252023,
+        "log_loss": 0.23099202581438702,
+        "expected_calibration_error_15_bins": 0.04608690978046633,
+        "true_positive_rate": 0.3682640684032611,
+        "true_negative_rate": 0.9826839826839827,
+        "false_positive_rate": 0.017316017316017316
+      }
+    },
+    "group_reweighted": {
+      "alpha": 1e-05,
+      "group_weight_strength": 2.0,
+      "threshold_objective": "validation worst-group accuracy",
+      "threshold": 0.36,
+      "validation_metrics": {
+        "accuracy": 0.8842905405405406,
+        "macro_group_accuracy": 0.7479615722200013,
+        "worst_group_accuracy": 0.6161879895561357,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 4046,
+            "accuracy": 0.8405832921403855
+          },
+          {
+            "group": "male|1",
+            "count": 713,
+            "accuracy": 0.7685834502103787
+          },
+          {
+            "group": "female|0",
+            "count": 5114,
+            "accuracy": 0.8472819710598357
+          },
+          {
+            "group": "female|1",
+            "count": 769,
+            "accuracy": 0.7074122236671001
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 1097,
+            "accuracy": 0.7456700091157703
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 357,
+            "accuracy": 0.6974789915966386
+          },
+          {
+            "group": "christian|0",
+            "count": 4163,
+            "accuracy": 0.9207302426134999
+          },
+          {
+            "group": "christian|1",
+            "count": 383,
+            "accuracy": 0.6161879895561357
+          },
+          {
+            "group": "muslim|0",
+            "count": 1592,
+            "accuracy": 0.7217336683417085
+          },
+          {
+            "group": "muslim|1",
+            "count": 511,
+            "accuracy": 0.7455968688845401
+          },
+          {
+            "group": "other_religions|0",
+            "count": 822,
+            "accuracy": 0.8637469586374696
+          },
+          {
+            "group": "other_religions|1",
+            "count": 162,
+            "accuracy": 0.6234567901234568
+          },
+          {
+            "group": "black|0",
+            "count": 1119,
+            "accuracy": 0.6425379803395889
+          },
+          {
+            "group": "black|1",
+            "count": 530,
+            "accuracy": 0.8018867924528302
+          },
+          {
+            "group": "white|0",
+            "count": 2005,
+            "accuracy": 0.6209476309226932
+          },
+          {
+            "group": "white|1",
+            "count": 845,
+            "accuracy": 0.8035502958579882
+          }
+        ],
+        "threshold": 0.36,
+        "roc_auc": 0.8946200518836455,
+        "average_precision": 0.599617038890921,
+        "brier_score": 0.074324810479346,
+        "log_loss": 0.2680435852550883,
+        "expected_calibration_error_15_bins": 0.08802308709074423,
+        "true_positive_rate": 0.666136408828793,
+        "true_negative_rate": 0.9117433626104147,
+        "false_positive_rate": 0.08825663738958536
+      }
+    }
+  },
+  "models": {
+    "erm": {
+      "validation_selected_threshold": 0.36,
+      "at_validation_selected_threshold": {
+        "accuracy": 0.9118185691540652,
+        "macro_group_accuracy": 0.6685544282459803,
+        "worst_group_accuracy": 0.27380952380952384,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 12092,
+            "accuracy": 0.9655970889844525
+          },
+          {
+            "group": "male|1",
+            "count": 2203,
+            "accuracy": 0.38856105310939626
+          },
+          {
+            "group": "female|0",
+            "count": 14179,
+            "accuracy": 0.9768671979688272
+          },
+          {
+            "group": "female|1",
+            "count": 2270,
+            "accuracy": 0.3497797356828194
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 3210,
+            "accuracy": 0.9165109034267913
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 1216,
+            "accuracy": 0.3988486842105263
+          },
+          {
+            "group": "christian|0",
+            "count": 12101,
+            "accuracy": 0.9868605900338815
+          },
+          {
+            "group": "christian|1",
+            "count": 1260,
+            "accuracy": 0.27380952380952384
+          },
+          {
+            "group": "muslim|0",
+            "count": 5355,
+            "accuracy": 0.9361344537815126
+          },
+          {
+            "group": "muslim|1",
+            "count": 1627,
+            "accuracy": 0.3896742470805163
+          },
+          {
+            "group": "other_religions|0",
+            "count": 2980,
+            "accuracy": 0.9624161073825503
+          },
+          {
+            "group": "other_religions|1",
+            "count": 520,
+            "accuracy": 0.33653846153846156
+          },
+          {
+            "group": "black|0",
+            "count": 3335,
+            "accuracy": 0.8464767616191904
+          },
+          {
+            "group": "black|1",
+            "count": 1537,
+            "accuracy": 0.5510735198438517
+          },
+          {
+            "group": "white|0",
+            "count": 5723,
+            "accuracy": 0.8656299143805696
+          },
+          {
+            "group": "white|1",
+            "count": 2246,
+            "accuracy": 0.5520926090828139
+          }
+        ],
+        "threshold": 0.36,
+        "roc_auc": 0.9032542287684836,
+        "average_precision": 0.6172134855505418,
+        "brier_score": 0.06868877914373013,
+        "log_loss": 0.23681683143711257,
+        "expected_calibration_error_15_bins": 0.04493660675402407,
+        "true_positive_rate": 0.36205990541250654,
+        "true_negative_rate": 0.9824135226093778,
+        "false_positive_rate": 0.017586477390622232
+      },
+      "at_fixed_0_50_threshold": {
+        "accuracy": 0.9064515887906355,
+        "macro_group_accuracy": 0.6088425942731249,
+        "worst_group_accuracy": 0.14603174603174604,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 12092,
+            "accuracy": 0.9875951042011247
+          },
+          {
+            "group": "male|1",
+            "count": 2203,
+            "accuracy": 0.24557421697684975
+          },
+          {
+            "group": "female|0",
+            "count": 14179,
+            "accuracy": 0.9924536286056844
+          },
+          {
+            "group": "female|1",
+            "count": 2270,
+            "accuracy": 0.20440528634361232
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 3210,
+            "accuracy": 0.9657320872274143
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 1216,
+            "accuracy": 0.24753289473684212
+          },
+          {
+            "group": "christian|0",
+            "count": 12101,
+            "accuracy": 0.9962812990661929
+          },
+          {
+            "group": "christian|1",
+            "count": 1260,
+            "accuracy": 0.14603174603174604
+          },
+          {
+            "group": "muslim|0",
+            "count": 5355,
+            "accuracy": 0.9788982259570495
+          },
+          {
+            "group": "muslim|1",
+            "count": 1627,
+            "accuracy": 0.2175783650891211
+          },
+          {
+            "group": "other_religions|0",
+            "count": 2980,
+            "accuracy": 0.9852348993288591
+          },
+          {
+            "group": "other_religions|1",
+            "count": 520,
+            "accuracy": 0.18846153846153846
+          },
+          {
+            "group": "black|0",
+            "count": 3335,
+            "accuracy": 0.935832083958021
+          },
+          {
+            "group": "black|1",
+            "count": 1537,
+            "accuracy": 0.35068314899154196
+          },
+          {
+            "group": "white|0",
+            "count": 5723,
+            "accuracy": 0.9496767429669754
+          },
+          {
+            "group": "white|1",
+            "count": 2246,
+            "accuracy": 0.3495102404274265
+          }
+        ],
+        "threshold": 0.5,
+        "roc_auc": 0.9032542287684836,
+        "average_precision": 0.6172134855505418,
+        "brier_score": 0.06868877914373013,
+        "log_loss": 0.23681683143711257,
+        "expected_calibration_error_15_bins": 0.04493660675402407,
+        "true_positive_rate": 0.2245139253809774,
+        "true_negative_rate": 0.9940197542110546,
+        "false_positive_rate": 0.0059802457889454015
+      },
+      "article_cluster_bootstrap_95ci": {
+        "average_accuracy": {
+          "ci_95_lower": 0.9092415894484482,
+          "ci_95_upper": 0.9141708875081641
+        },
+        "worst_group_accuracy": {
+          "ci_95_lower": 0.24750871426346346,
+          "ci_95_upper": 0.3029755645686245
+        },
+        "resamples": 500,
+        "cluster_unit": "source article"
+      }
+    },
+    "group_reweighted": {
+      "validation_selected_threshold": 0.36,
+      "at_validation_selected_threshold": {
+        "accuracy": 0.8807453973284697,
+        "macro_group_accuracy": 0.7456103343127145,
+        "worst_group_accuracy": 0.6293853073463268,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 12092,
+            "accuracy": 0.8262487595104201
+          },
+          {
+            "group": "male|1",
+            "count": 2203,
+            "accuracy": 0.7203812982296868
+          },
+          {
+            "group": "female|0",
+            "count": 14179,
+            "accuracy": 0.8438535862895832
+          },
+          {
+            "group": "female|1",
+            "count": 2270,
+            "accuracy": 0.718942731277533
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 3210,
+            "accuracy": 0.7062305295950155
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 1216,
+            "accuracy": 0.7368421052631579
+          },
+          {
+            "group": "christian|0",
+            "count": 12101,
+            "accuracy": 0.903644326915131
+          },
+          {
+            "group": "christian|1",
+            "count": 1260,
+            "accuracy": 0.6325396825396825
+          },
+          {
+            "group": "muslim|0",
+            "count": 5355,
+            "accuracy": 0.715219421101774
+          },
+          {
+            "group": "muslim|1",
+            "count": 1627,
+            "accuracy": 0.7430854333128457
+          },
+          {
+            "group": "other_religions|0",
+            "count": 2980,
+            "accuracy": 0.8634228187919463
+          },
+          {
+            "group": "other_religions|1",
+            "count": 520,
+            "accuracy": 0.6576923076923077
+          },
+          {
+            "group": "black|0",
+            "count": 3335,
+            "accuracy": 0.6293853073463268
+          },
+          {
+            "group": "black|1",
+            "count": 1537,
+            "accuracy": 0.7931034482758621
+          },
+          {
+            "group": "white|0",
+            "count": 5723,
+            "accuracy": 0.6346321859164774
+          },
+          {
+            "group": "white|1",
+            "count": 2246,
+            "accuracy": 0.8045414069456812
+          }
+        ],
+        "threshold": 0.36,
+        "roc_auc": 0.8921390557967707,
+        "average_precision": 0.5943340657899087,
+        "brier_score": 0.07602834504766685,
+        "log_loss": 0.27283763161272273,
+        "expected_calibration_error_15_bins": 0.08858916462974778,
+        "true_positive_rate": 0.655084077771939,
+        "true_negative_rate": 0.9097227493948059,
+        "false_positive_rate": 0.09027725060519412
+      },
+      "at_fixed_0_50_threshold": {
+        "accuracy": 0.9063394652454384,
+        "macro_group_accuracy": 0.7147736684522981,
+        "worst_group_accuracy": 0.4579365079365079,
+        "subgroups": [
+          {
+            "group": "male|0",
+            "count": 12092,
+            "accuracy": 0.918706582864704
+          },
+          {
+            "group": "male|1",
+            "count": 2203,
+            "accuracy": 0.5492510213345438
+          },
+          {
+            "group": "female|0",
+            "count": 14179,
+            "accuracy": 0.9317300232738557
+          },
+          {
+            "group": "female|1",
+            "count": 2270,
+            "accuracy": 0.5290748898678415
+          },
+          {
+            "group": "LGBTQ|0",
+            "count": 3210,
+            "accuracy": 0.8376947040498443
+          },
+          {
+            "group": "LGBTQ|1",
+            "count": 1216,
+            "accuracy": 0.5649671052631579
+          },
+          {
+            "group": "christian|0",
+            "count": 12101,
+            "accuracy": 0.958019998347244
+          },
+          {
+            "group": "christian|1",
+            "count": 1260,
+            "accuracy": 0.4579365079365079
+          },
+          {
+            "group": "muslim|0",
+            "count": 5355,
+            "accuracy": 0.8649859943977591
+          },
+          {
+            "group": "muslim|1",
+            "count": 1627,
+            "accuracy": 0.5586969883220652
+          },
+          {
+            "group": "other_religions|0",
+            "count": 2980,
+            "accuracy": 0.9348993288590604
+          },
+          {
+            "group": "other_religions|1",
+            "count": 520,
+            "accuracy": 0.47307692307692306
+          },
+          {
+            "group": "black|0",
+            "count": 3335,
+            "accuracy": 0.7952023988005997
+          },
+          {
+            "group": "black|1",
+            "count": 1537,
+            "accuracy": 0.6265452179570592
+          },
+          {
+            "group": "white|0",
+            "count": 5723,
+            "accuracy": 0.793115498864232
+          },
+          {
+            "group": "white|1",
+            "count": 2246,
+            "accuracy": 0.6424755120213713
+          }
+        ],
+        "threshold": 0.5,
+        "roc_auc": 0.8921390557967707,
+        "average_precision": 0.5943340657899087,
+        "brier_score": 0.07602834504766685,
+        "log_loss": 0.27283763161272273,
+        "expected_calibration_error_15_bins": 0.08858916462974778,
+        "true_positive_rate": 0.47819232790331057,
+        "true_negative_rate": 0.9613181845019695,
+        "false_positive_rate": 0.038681815498030486
+      },
+      "article_cluster_bootstrap_95ci": {
+        "average_accuracy": {
+          "ci_95_lower": 0.8772023722794461,
+          "ci_95_upper": 0.884192035563415
+        },
+        "worst_group_accuracy": {
+          "ci_95_lower": 0.6011094176372712,
+          "ci_95_upper": 0.639508634202217
+        },
+        "resamples": 500,
+        "cluster_unit": "source article"
+      }
+    }
+  },
+  "paired_group_reweighted_minus_erm_article_cluster_bootstrap_95ci": {
+    "candidate_minus_baseline_average_accuracy": {
+      "delta": -0.031073171825595547,
+      "ci_95_lower": -0.032895537382648506,
+      "ci_95_upper": -0.02920388759286643
+    },
+    "candidate_minus_baseline_worst_group_accuracy": {
+      "delta": 0.35557578353680297,
+      "ci_95_lower": 0.31814240227597895,
+      "ci_95_upper": 0.3749848077157522
+    },
+    "resamples": 500,
+    "cluster_unit": "source article"
+  },
+  "model_comparison_note": "Both methods use the same train-fitted word TF-IDF features and alpha. ERM's global threshold was selected for validation average accuracy; the reweighted model's global threshold and weight strength were selected for validation worst-group accuracy. The test split was scored after selection.",
+  "interpretation_note": "Identity fields indicate mentions in comment text, not author demographics. Human toxicity labels are subjective crowd annotations. Metrics do not establish fairness for people or suitability for moderation decisions.",
+  "raw_comments_or_row_predictions_committed": false
+}

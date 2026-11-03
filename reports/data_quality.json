@@ -1,0 +1,66 @@
+{
+  "dataset": "WILDS CivilComments v1.0",
+  "license": "CC0 1.0 public domain, as stated by the official WILDS dataset page and loader",
+  "source_archive_sha256": "cfc65ff0cfc9e91f9afd2856d2212076ebb94deebfb6c5a1b2a32ccd97149b5f",
+  "source_csv_sha256": "5fbf41b9903e6a8f78a3c2e5ea3a659621336538a48c1be8d051d50082b5af79",
+  "source_csv_bytes": 272774548,
+  "rows": 448000,
+  "split_counts": {
+    "train": 269038,
+    "test": 133782,
+    "val": 45180
+  },
+  "toxicity_positive_rule": "toxicity >= 0.5",
+  "label_counts": {
+    "non_toxic": 397206,
+    "toxic": 50794
+  },
+  "missing_or_empty_text_rows_by_split": {
+    "train": 1,
+    "val": 0,
+    "test": 1
+  },
+  "identity_columns": [
+    "male",
+    "female",
+    "LGBTQ",
+    "christian",
+    "muslim",
+    "other_religions",
+    "black",
+    "white"
+  ],
+  "identity_label_group_counts": {
+    "male|0": 41515,
+    "male|1": 7355,
+    "female|0": 50581,
+    "female|1": 8003,
+    "LGBTQ|0": 10464,
+    "LGBTQ|1": 3839,
+    "christian|0": 40559,
+    "christian|1": 4090,
+    "muslim|0": 17782,
+    "muslim|1": 5264,
+    "other_religions|0": 9345,
+    "other_religions|1": 1685,
+    "black|0": 11239,
+    "black|1": 5181,
+    "white|0": 19754,
+    "white|1": 7780
+  },
+  "unique_articles": 69573,
+  "cross_split_article_leaks": 0,
+  "cross_split_normalized_text_duplicate_groups": 738,
+  "leakage_safe_rows": {
+    "train": 267669,
+    "val": 44992,
+    "test": 133781
+  },
+  "leakage_exclusions": {
+    "train_removed_for_empty_or_duplicate_text": 1369,
+    "val_removed_for_empty_or_duplicate_text": 188,
+    "test_removed_for_empty_or_duplicate_text": 1
+  },
+  "text_rows_committed": false,
+  "row_level_predictions_committed": false
+}
