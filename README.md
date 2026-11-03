@@ -141,5 +141,4 @@ duplicate exclusion limit interpretation.
   `.streamlit/config.toml`
 
 All code is MIT-licensed; dataset terms are separate. The upstream WILDS
-CivilComments data page lists the benchmark data as CC0. No repository remote
-is configured in this local preparation phase.
+CivilComments data page lists the benchmark data as CC0.
